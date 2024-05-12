@@ -17,17 +17,17 @@
 </p>
 
 ## Features
+- ✅ Multi-languages support
 - ✅ Add a new context menu (Right Click) "Download the thumbnail via broll.gabin.app"
-- ⏳ Add a browser action (Click on extension icon) with url params
+- ✅ Add a browser action (Click on extension icon) with url params
+- ⏳ Available for Google Chrome
 - ⏳ Add autodownload 
 
 ## Preview
 
-<!-- 
-![Before](https://addons.mozilla.org/user-media/previews/full/289/xxx.png)
-![After](https://addons.mozilla.org/user-media/previews/full/289/xxx.png)
--->
-
+![Browser action](https://addons.mozilla.org/user-media/previews/full/299/299358.png)
+![Thumbnail direct shortcut](https://addons.mozilla.org/user-media/previews/full/299/299360.png)
+  
 ## Installation
 
 ### Firefox 
