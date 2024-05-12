@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+  "version": "0.1",
+  "default_locale": "en",
+  "author": "rztprog",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "strict_min_version": "56.0a1"
+    }
+  },
+
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "clipboardWrite",
+    "tabs",
+    "https://broll.gabin.app/"
+  ],
+
+  "icons": {
+    "48": "icons/broll48.png",
+    "96": "icons/broll96.png"
+  },
+
+  "background": {
+    "scripts": [
+      "src/broll.js"
+    ]
+  }
+}
