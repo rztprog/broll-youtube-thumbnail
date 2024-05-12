@@ -1,0 +1,6 @@
+{
+    "extensionName": {"message": "Broll Youtube Thumbnail"},
+    "extensionDescription": {"message": "Custom YouTube Thumbnail Editor"},
+
+    "menuItemDownloadThumbnail": {"message": "Download the thumbnail via broll.gabin.app"}
+}

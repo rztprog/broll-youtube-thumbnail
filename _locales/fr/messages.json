@@ -1,0 +1,6 @@
+{
+    "extensionName": {"message": "Broll Vignette Youtube"},
+    "extensionDescription": {"message": "Éditeur de vignettes YouTube personnalisé"},
+
+    "menuItemDownloadThumbnail": {"message": "Télécharger la vignette via broll.gabin.app"}
+}
