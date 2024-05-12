@@ -2,30 +2,95 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <!-- <link href="popup.css" rel="stylesheet"> -->
+        <link href="popup.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
     </head>
     <body>
         <header>
-
+            <img class="icon" src="../icons/broll128.png" title="Broll Youtube Thumbnail icon">
+            <h2 id="titleName">Broll Youtube Thumbnail</h2>
+            <h3 id="titleDescription">Custom YouTube Thumbnail Editor</h3>
         </header>
-        
-        <!-- Mettre les différents paramètres de l'url dans broll.js avec un chrome.storage -->
-
-        -Durée
-        -Logo
-        -Nom
-        -Vues
-        -Date
-        -Progression
-
-        -Taille texte
-        -Espacements
-        -Arrondis
-
-
+        <!-- Panel -->
+        <fieldset class="settings">
+            <legend id="settings_text">
+                Settings
+            </legend>
+            <div class="labels">
+                <label class="setting" title="Display duration">
+                    <input type="checkbox" id="displaydurationInput">
+                    <span id="display_duration_text">
+                        Display duration
+                    </span>
+                </label>
+                <label class="setting" title="Display channel logo">
+                    <input type="checkbox" id="displaychannellogoInput">
+                    <span id="display_channel_logo_text">
+                        Display channel logo
+                    </span>
+                </label>
+                <label class="setting" title="Display channel name">
+                    <input type="checkbox" id="displaychannelnameInput">
+                    <span id="display_channel_name_text">
+                        Display channel name
+                    </span>
+                </label>
+                <label class="setting" title="Display views">
+                    <input type="checkbox" id="displayviewsInput">
+                    <span id="display_views_text">
+                        Display views
+                    </span>
+                </label>
+                <label class="setting" title="Display publication date">
+                    <input type="checkbox" id="displaypublicationdateInput">
+                    <span id="display_publication_date_text">
+                        Display publication date
+                    </span>
+                </label>
+            </div>
+        </fieldset>
+        <fieldset class="features">
+            <legend id="features_text">
+                Features
+            </legend>
+            <div class="labels">
+                <label class="setting notAvailable" title="Autodownload (Not yet available)">
+                    <input type="checkbox" id="autodownloadInput" disabled>
+                    <span id="autodownload_text">
+                        Auto-download
+                    </span>
+                </label>
+            </div>
+            <div class="labels">
+                <label class="setting notAvailable" title="Dontopen (Not yet available)">
+                    <input type="checkbox" id="DontopenInput" disabled>
+                    <span id="Dontopen_text">
+                        Dont open broll.gabin.app
+                    </span>
+                </label>
+            </div>
+        </fieldset>
+        <!--
+            -Taille texte
+            -Espacements
+            -Arrondis
+        -->
         <footer>
-
+            <!-- Links -->
+            <span>
+                <a href="https://github.com/rztprog/broll-youtube-thumbnail" title="Help me to improve Broll Youtube Thumbnail" class="github">
+                    <i class="fa-brands fa-github" title="Github"></i>
+                </a>
+                <a href="https://addons.mozilla.org/fr/firefox/addon/broll-youtube-thumbnail/reviews/" title="Leave me stars and feedback !" class="rating">
+                    <i class="fa-solid fa-star-half-stroke" title="Rating"></i>
+                </a>
+            </span>
+            <!-- Version -->
+            <span>
+                <i class="fa-solid fa-code-compare"></i>
+                <span class="extVersion"></span>
+            </span>
         </footer>
-        <!-- <script src="popup.js"></script> -->
+        <script src="popup.js"></script>
     </body>
 </html>

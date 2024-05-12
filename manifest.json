@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
-  "version": "0.1",
+  "version": "0.2",
   "default_locale": "en",
   "author": "rztprog",
 
@@ -17,6 +17,7 @@
     "contextMenus",
     "clipboardWrite",
     "tabs",
+    "storage",
     "https://broll.gabin.app/"
   ],
 
@@ -29,5 +30,14 @@
     "scripts": [
       "src/broll.js"
     ]
+  },
+
+  "browser_action": {
+    "default_icon":{
+      "48": "icons/broll48.png",
+      "96": "icons/broll96.png"
+    },
+    "default_title": "Broll Youtube Thumbnail",
+    "default_popup": "./src/popup.html"
   }
 }

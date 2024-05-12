@@ -2,5 +2,12 @@
     "extensionName": {"message": "Broll Vignette Youtube"},
     "extensionDescription": {"message": "Éditeur de vignettes YouTube personnalisé"},
 
-    "menuItemDownloadThumbnail": {"message": "Télécharger la vignette via broll.gabin.app"}
+    "menuItemDownloadThumbnail": {"message": "Télécharger la vignette via broll.gabin.app"},
+
+    "cfg_settings_text": {"message": "Paramètres"},
+    "cfg_display_duration": {"message": "Afficher la durée"},
+    "cfg_channel_logo": {"message": "Afficher le logo de la chaîne"},
+    "cfg_channel_name": {"message": "Afficher le nom de la chaîne"},
+    "cfg_views": {"message": "Afficher les vues"},
+    "cfg_publication": {"message": "Afficher la date de publication"}
 }

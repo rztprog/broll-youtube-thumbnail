@@ -1,6 +1,113 @@
 * {
     margin: 0;
     padding: 0;
-box-sizing: borderbox;
+    box-sizing: borderbox;
+    font-family: 'Outfit', 'Tahoma', 'Helvetica', 'Arial', sans-serif;
 }
 
+body {
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 8px;
+    max-width: 18rem;
+	min-width: 16rem;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+h3 {
+    color: grey;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.github:hover {
+    color: rgb(21, 45, 60);
+}
+
+.rating:hover {
+    color: rgb(235, 235, 0);
+}
+
+.rating:hover::before,
+.github:hover::before{
+    position: absolute;
+    font-family: "Font Awesome 6 Free";
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.rating:hover::before{
+    content: "\f5c0";
+}
+
+.github:hover::before{
+    color: transparent;
+    content: "\f111";
+}
+
+.icon {
+    width: fit-content;
+    margin: -25px;
+}
+
+.labels {
+    display: flex;
+    flex-direction: column;
+}
+
+.setting{
+    user-select: none;
+    display: flex;
+    align-items: center;
+}
+
+.setting span{
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.settings,
+.features{
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    transition: border 0.4s ease-in-out;
+}
+
+.settings:hover,
+.features:hover{
+    border: 1px solid #ff0000;
+    transition: border 0.4s ease-in-out;
+}
+
+.extVersion{
+    font-family: Arial;
+    font-size: 10px;
+}
+
+.titlePopup {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.notAvailable{
+    cursor: not-allowed;
+}
