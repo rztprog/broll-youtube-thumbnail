@@ -46,4 +46,4 @@ or add the Add-on temporarily:
 
 ## Thanks to
 
-- [Gabin](https://gabin.app/) for helping and allowing me to create an extension related to his website [broll.gabin.app](https://broll.gabin.app/).
+- [Gabin](https://github.com/zhouzi) for helping and allowing me to create an extension related to his website [broll.gabin.app](https://broll.gabin.app/).
