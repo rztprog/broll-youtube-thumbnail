@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+  "version": "0.2",
+  "default_locale": "en",
+  "author": "rztprog",
+
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "clipboardWrite",
+    "tabs",
+    "storage",
+    "scripting"
+  ],
+
+  "icons": {
+    "48": "icons/broll48.png",
+    "96": "icons/broll96.png"
+  },
+
+  "background": {
+    "service_worker": "src/broll.js"
+  },
+
+  "action": {
+    "default_icon":{
+      "48": "icons/broll48.png",
+      "96": "icons/broll96.png"
+    },
+    "default_title": "Broll Youtube Thumbnail",
+    "default_popup": "./src/popup.html"
+  }
+}

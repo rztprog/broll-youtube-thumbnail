@@ -1,0 +1,13 @@
+{
+    "extensionName": {"message": "Broll Youtube Thumbnail"},
+    "extensionDescription": {"message": "Custom YouTube Thumbnail Editor"},
+
+    "menuItemDownloadThumbnail": {"message": "Download the thumbnail via broll.gabin.app"},
+
+    "cfg_settings_text": {"message": "Settings"},
+    "cfg_display_duration": {"message": "Display duration"},
+    "cfg_channel_logo": {"message": "Display channel logo"},
+    "cfg_channel_name": {"message": "Display channel name"},
+    "cfg_views": {"message": "Display views"},
+    "cfg_publication": {"message": "Display publication date"}
+}
