@@ -40,7 +40,7 @@ or add the Add-on temporarily:
 4. Click on <b>Load Temporary Add-on...</b>
 5. Select entier .zip file inside of downloaded git project (broll_youtube_thumbnail_vx.x.x.zip)
 
-6. ### Google Chrome
+### Google Chrome
 
 Install from [Chrome web store](https://chrome.google.com/webstore/detail/broll-youtube-thumbnail) webpage
 
