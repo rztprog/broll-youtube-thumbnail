@@ -21,7 +21,7 @@
 - ✅ Multi-languages support
 - ✅ Add a new context menu (Right Click) "Download the thumbnail via broll.gabin.app"
 - ✅ Add a browser action (Click on extension icon) with url params
-- ⏳ Available for Google Chrome
+- ✅ Available for Google Chrome and Firefox
 - ⏳ Add autodownload 
 
 ## Preview
