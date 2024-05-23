@@ -6,9 +6,9 @@
 </div>
 
 <h3 align="center">
-  <img src="https://img.shields.io/amo/users/broll-youtube-thumbnail?style=flat&logo=firefox&label=Firefox%20Users">
-  <img src="https://img.shields.io/chrome-web-store/users/cmngialhnhgajemigclojimhdfdckfln?logo=googlechrome&label=Chrome%20Users">
-  <img src="https://img.shields.io/amo/v/broll-youtube-thumbnail?style=flat&logo=firefox&label=Version">
+  <img src="https://img.shields.io/amo/users/broll-youtube-thumbnail?style=flat&logo=firefoxbrowser&label=Firefox%20Users">
+  <img src="https://img.shields.io/chrome-web-store/users/cmngialhnhgajemigclojimhdfdckfln?logo=googlechrome&label=Chrome%20Users&color=blue">
+  <img src="https://img.shields.io/amo/v/broll-youtube-thumbnail?style=flat&logo=firefox&label=Version&color=#006d32">
 </h3>
 
 <h3 align="center">
