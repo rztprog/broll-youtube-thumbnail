@@ -1,0 +1,21 @@
+{
+    "extensionName": {"message": "Broll YouTube Thumbnail"},
+    "extensionDescription": {"message": "Benutzerdefinierter YouTube-Thumbnail-Editor"},
+
+    "menuItemDownloadThumbnail": {"message": "Das Thumbnail über broll.gabin.app herunterladen"},
+
+    "cfg_settings": {"message": "Einstellungen"},
+    "cfg_display_duration": {"message": "Dauer anzeigen"},
+    "cfg_channel_logo": {"message": "Kanal-Logo anzeigen"},
+    "cfg_channel_name": {"message": "Kanalnamen anzeigen"},
+    "cfg_views": {"message": "Aufrufe anzeigen"},
+    "cfg_publication": {"message": "Veröffentlichungsdatum anzeigen"},
+    "cfg_progression": {"message": "Leseverlauf anzeigen"},
+
+    "cfg_features": {"message": "Funktionen"},
+    "cfg_autodownload": {"message": "Automatischer Download"},
+    "cfg_saveas": {"message": "Fenster 'Speichern unter'"},
+    "cfg_dontopen": {"message": "Öffnen Sie broll.gabin.app nicht"},
+    "cfg_creation": {"message": "Erstellung des Thumbnails läuft..."},
+    "cfg_downloaded": {"message": "Download abgeschlossen 📥"}
+}

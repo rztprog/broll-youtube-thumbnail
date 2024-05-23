@@ -4,10 +4,18 @@
 
     "menuItemDownloadThumbnail": {"message": "Télécharger la vignette via broll.gabin.app"},
 
-    "cfg_settings_text": {"message": "Paramètres"},
+    "cfg_settings": {"message": "Paramètres"},
     "cfg_display_duration": {"message": "Afficher la durée"},
     "cfg_channel_logo": {"message": "Afficher le logo de la chaîne"},
     "cfg_channel_name": {"message": "Afficher le nom de la chaîne"},
     "cfg_views": {"message": "Afficher les vues"},
-    "cfg_publication": {"message": "Afficher la date de publication"}
+    "cfg_publication": {"message": "Afficher la date de publication"},
+    "cfg_progression": {"message": "Afficher la progression de lecture"},
+
+    "cfg_features": {"message": "Fonctionnalités"},
+    "cfg_autodownload": {"message": "Téléchargement automatique"},
+    "cfg_saveas": {"message": "Fenêtre 'Enregistrer sous'"},
+    "cfg_dontopen": {"message": "Ne pas ouvrir broll.gabin.app"},
+    "cfg_creation": {"message": "Création de la miniature en cours..."},
+    "cfg_downloaded": {"message": "Téléchargement terminé 📥"}
 }

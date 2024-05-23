@@ -4,10 +4,18 @@
 
     "menuItemDownloadThumbnail": {"message": "Download the thumbnail via broll.gabin.app"},
 
-    "cfg_settings_text": {"message": "Settings"},
+    "cfg_settings": {"message": "Settings"},
     "cfg_display_duration": {"message": "Display duration"},
     "cfg_channel_logo": {"message": "Display channel logo"},
     "cfg_channel_name": {"message": "Display channel name"},
     "cfg_views": {"message": "Display views"},
-    "cfg_publication": {"message": "Display publication date"}
+    "cfg_publication": {"message": "Display publication date"},
+    "cfg_progression": {"message": "Display reading progression"},
+
+    "cfg_features": {"message": "Features"},
+    "cfg_autodownload": {"message": "Auto-download"},
+    "cfg_saveas": {"message": "'Save as' window"},
+    "cfg_dontopen": {"message": "Don't open broll.gabin.app"},
+    "cfg_creation": {"message": "Thumbnail creation in progress..."},
+    "cfg_downloaded": {"message": "Download complete 📥"}
 }

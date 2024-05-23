@@ -2,23 +2,32 @@
   "manifest_version": 3,
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
-  "version": "0.2",
+  "version": "0.3",
   "default_locale": "en",
   "author": "rztprog",
 
   "permissions": [
     "activeTab",
     "contextMenus",
-    "clipboardWrite",
     "tabs",
-    "storage",
-    "scripting"
+    "storage"
+  ],
+
+  "host_permissions": [
+    "https://broll.gabin.app/"
   ],
 
   "icons": {
     "48": "icons/broll48.png",
     "96": "icons/broll96.png"
   },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["src/mouseEventMessage.js"]
+    }
+  ],
 
   "background": {
     "service_worker": "src/broll.js"

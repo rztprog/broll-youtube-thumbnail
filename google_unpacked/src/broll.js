@@ -5,10 +5,15 @@ let showChannelLogo = true
 let showChannelTitle = true
 let showViews = true
 let showPublished = true
+let showProgression = false
 
 let fontSize = 1
 let spacing = 1
 let borderRadius = 1
+
+let autoDownload = true
+let saveAs = false
+let dontOpen = true
 
 chrome.storage.local.get(null, function (value) {
     loadVariables(value);
@@ -17,27 +22,40 @@ chrome.storage.local.get(null, function (value) {
 chrome.storage.onChanged.addListener(function (changes) {
 	const updatedElement = Object.keys(changes)[0];
 	switch (updatedElement) {
-	  	case "showDuration":
-			showDuration = changes.showDuration.newValue;
-			brollModifier(0);
-			break;
-		case "showChannelLogo":
-			showChannelLogo = changes.showChannelLogo.newValue;
-			brollModifier(1);
-			break;
-		case "showChannelTitle":
-			showChannelTitle = changes.showChannelTitle.newValue;
-			brollModifier(2);
-			break;
-		case "showViews":
-			showViews = changes.showViews.newValue;
-			brollModifier(3);
-			break;
-		case "showPublished":
-			showPublished = changes.showPublished.newValue;
-			brollModifier(4);
-			break;
-	}
+        case "showDuration":
+          showDuration = changes.showDuration.newValue;
+          brollModifier(0);
+          break;
+        case "showChannelLogo":
+            showChannelLogo = changes.showChannelLogo.newValue;
+            brollModifier(1);
+            break;
+        case "showChannelTitle":
+            showChannelTitle = changes.showChannelTitle.newValue;
+            brollModifier(2);
+            break;
+        case "showViews":
+            showViews = changes.showViews.newValue;
+            brollModifier(3);
+            break;
+        case "showPublished":
+            showPublished = changes.showPublished.newValue;
+            brollModifier(4);
+            break;
+        case "showProgression":
+            showProgression = changes.showProgression.newValue;
+            brollModifier(5);
+            break;
+        case "autoDownload":
+            autoDownload = changes.autoDownload.newValue;
+            break;
+        case "dontOpen":
+            dontOpen = changes.dontOpen.newValue;
+            break;
+        case "saveAs":
+            saveAs = changes.saveAs.newValue;
+            break;
+    }
 })
 
 const loadVariables = (value) => {
@@ -46,29 +64,35 @@ const loadVariables = (value) => {
 	showChannelTitle = value.showChannelTitle === undefined ? showChannelTitle : value.showChannelTitle;
 	showViews = value.showViews === undefined ? showViews : value.showViews;
 	showPublished = value.showPublished === undefined ? showPublished : value.showPublished;
+    showProgression = value.showProgression === undefined ? showProgression : value.showProgression;
+    autoDownload = value.autoDownload === undefined ? autoDownload : value.autoDownload;
+    dontOpen = value.dontOpen === undefined ? dontOpen : value.dontOpen;
+    saveAs = value.saveAs === undefined ? saveAs : value.saveAs;
 
 	chrome.storage.local.set({
 		showDuration,
 		showChannelLogo,
 		showChannelTitle,
 		showViews,
-		showPublished
+		showPublished,
+        showProgression,
+        autoDownload,
+        dontOpen,
+        saveAs
 	});
-}
-
-function brollUpdateCheckbox(paramsOrder) {
-    document.querySelectorAll(".items-start button")[paramsOrder].click();
 }
 
 const brollModifier = (paramsOrder) => {
     chrome.tabs.query({}, (tabs) => {
         for (let tab of tabs) {
             if (tab.url && tab.url.includes("broll.gabin.app")) {
-                chrome.scripting.executeScript({
-                    target : {tabId: tab.id},
-                    func: brollUpdateCheckbox,
-                    args: [paramsOrder]
-                }).then(() => console.log("Broll changed !"));
+                chrome.tabs.executeScript(tab.id, {
+                    code: `document.querySelectorAll(".items-start button")[${paramsOrder}].click();`
+                }).then(() => {
+                    console.log("Broll changed !");
+                }).catch((error) => {
+                    console.error("Error executing action:", error);
+                });
             }
         }
     });
@@ -91,38 +115,52 @@ function createContextMenu() {
 chrome.runtime.onInstalled.addListener(createContextMenu);
 chrome.runtime.onStartup.addListener(createContextMenu);
 
-async function writeToClipboard(text) {
-    // await navigator.clipboard.writeText(text)
-}
-
 chrome.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId === "downloadThumbnail") {
         const videoUrl = info.linkUrl;
+        const videoId = videoUrl.split('v=')[1];
 
         if (videoUrl.includes('watch')) {
-            writeToClipboard(videoUrl)
-            .then(() => {
-                return chrome.tabs.create({
+            const apiUrl = `https://broll.gabin.app/api/card/youtube/video?videoUrl=${videoUrl}`
+
+            if (autoDownload) {
+                chrome.tabs.sendMessage(tab.id, {
+                    action: 'downloadModal',
+                    message: chrome.i18n.getMessage("cfg_creation"),
+                    videoId: videoId
+                });
+
+                fetch(apiUrl)
+                .then(response => response.blob())
+                .then(blob => {
+                    const reader = new FileReader();
+                    reader.onloadend = function() {
+                        const base64data = reader.result;
+                        chrome.tabs.sendMessage(tab.id, {
+                            action: 'downloadImage',
+                            imageUrl: base64data,
+                            filename: `thumbnail_${videoId}.png`,
+                            saveAs: saveAs
+                        });
+                    };
+                    reader.readAsDataURL(blob);
+                }).then(() => {
+                    chrome.tabs.sendMessage(tab.id, {
+                        action: 'hideModal',
+                        message: chrome.i18n.getMessage("cfg_downloaded"),
+                        videoId: videoId
+                    });
+                })
+                .catch(error => {
+                    console.error('Error when downloading thumbnail:', error);
+                });
+            }
+
+            if (!dontOpen) {
+                chrome.tabs.create({
                     url: `https://broll.gabin.app/?videoUrl=${videoUrl}&theme%5Bcard%5D%5BfontSize%5D=${fontSize}&theme%5Bcard%5D%5Bforeground%5D=${'%230f0f0f'}&theme%5Bcard%5D%5Bbackground%5D=%23ffffff&theme%5Bcard%5D%5Bspacing%5D=${spacing}&theme%5Bcard%5D%5BborderRadius%5D=${borderRadius}&theme%5Bduration%5D%5Bforeground%5D=%23ffffff&theme%5Bduration%5D%5Bbackground%5D=%23000000cc&theme%5BprogressBar%5D%5Bforeground%5D=%23ff0000&theme%5BprogressBar%5D%5Bbackground%5D=%23c8c8c899&theme%5Boptions%5D%5BshowDuration%5D=${showDuration}&theme%5Boptions%5D%5BshowViews%5D=${showViews}&theme%5Boptions%5D%5BshowPublishedAt%5D=${showPublished}&theme%5Boptions%5D%5BshowChannelThumbnail%5D=${showChannelLogo}&theme%5Boptions%5D%5BshowChannelTitle%5D=${showChannelTitle}`
                 })
-                .then((tab) => {
-                    /* In Progress
-                    
-                    browser.tabs.onUpdated.addListener(function listener(tabId, changeInfo, updatedTab) {
-                        if (tabId === tab.id && changeInfo.status === "complete") {
-                            browser.tabs.executeScript(tabId, {
-                                file: 'src/autoDownload.js',
-                                allFrames: true,
-                            });
-                            browser.tabs.onUpdated.removeListener(listener);
-                        }
-                    });
-                    */
-                });
-            })
-            .catch((error) => {
-                console.error('Error when copy in clipboard :', error);
-            });
+            }
         }
     }
 });
