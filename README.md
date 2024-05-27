@@ -25,10 +25,12 @@
 - ✅ Available for Google Chrome and Firefox
 - ✅ Add a new context menu (Right Click) "Download the thumbnail via broll.gabin.app"
 - ✅ Add a browser action (Click on extension icon) with Broll Params
-- ✅ Add autodownload
-- ✅ Add animation when the thumbnail is being created
+- ✅ Add autodownload mode
+- ✅ Add copyToCliboard mode (Only in Chrome)
+- ✅ Animation when the thumbnail is being created
 - ✅ Choose save mode (SaveAs, Autosave)
-- ✅ Choose to don't open broll.gabin.app
+- ✅ Open in broll.gabin.app
+- ✅ Change filename output
 
 ## Preview
 
