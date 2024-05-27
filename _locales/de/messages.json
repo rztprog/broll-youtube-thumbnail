@@ -2,7 +2,7 @@
     "extensionName": {"message": "Broll YouTube Thumbnail"},
     "extensionDescription": {"message": "Benutzerdefinierter YouTube-Thumbnail-Editor"},
 
-    "menuItemDownloadThumbnail": {"message": "Das Thumbnail über broll.gabin.app herunterladen"},
+    "cfg_broll": {"message": "Das Thumbnail über broll.gabin.app herunterladen"},
 
     "cfg_settings": {"message": "Einstellungen"},
     "cfg_display_duration": {"message": "Dauer anzeigen"},
@@ -13,9 +13,13 @@
     "cfg_progression": {"message": "Leseverlauf anzeigen"},
 
     "cfg_features": {"message": "Funktionen"},
-    "cfg_autodownload": {"message": "Automatischer Download"},
+    "cfg_autodownload": {"message": "Automatisch herunterladen"},
     "cfg_saveas": {"message": "Fenster 'Speichern unter'"},
-    "cfg_dontopen": {"message": "Öffnen Sie broll.gabin.app nicht"},
+    "cfg_openinbroll": {"message": "Öffnen in broll.gabin.app"},
     "cfg_creation": {"message": "Erstellung des Thumbnails läuft..."},
-    "cfg_downloaded": {"message": "Download abgeschlossen 📥"}
+    "cfg_downloaded": {"message": "Download abgeschlossen 📥"},
+    "cfg_filename": {"message": "Dateiname"},
+    "cfg_thumbnail": {"message": "vorschaubild_"},
+    "cfg_copytoclipboard": {"message": "Bild in die Zwischenablage kopieren"},
+    "cfg_copied": {"message": "Bild in die Zwischenablage kopiert 📥"}
 }

@@ -27,9 +27,9 @@ window.onload = function() {
     updateInputElement("displayviewsInput", "showViews");
     updateInputElement("displaypublicationdateInput", "showPublished");
     updateInputElement("displayreadingprogressionInput", "showProgression");
-    updateInputElement("autodownloadInput", "autoDownload");
-    updateInputElement("dontopenInput", "dontOpen");
     updateInputElement("saveasInput", "saveAs");
+    updateInputElement("filenameInput", "filePrefix");
+    updateInputElement("filenameSelect", "videoParam");
 
     // Locales
     document.getElementById("titleName").textContent = chrome.i18n.getMessage("extensionName");
@@ -42,9 +42,8 @@ window.onload = function() {
     document.getElementById("display_views_text").textContent = chrome.i18n.getMessage("cfg_views");
     document.getElementById("display_publication_date_text").textContent = chrome.i18n.getMessage("cfg_publication");
     document.getElementById("display_reading_progression_text").textContent = chrome.i18n.getMessage("cfg_progression");
-    document.getElementById("autodownload_text").textContent = chrome.i18n.getMessage("cfg_autodownload");
     document.getElementById("saveas_text").textContent = chrome.i18n.getMessage("cfg_saveas");
-    document.getElementById("dontopen_text").textContent = chrome.i18n.getMessage("cfg_dontopen");
+    document.getElementById("filename_text").textContent = chrome.i18n.getMessage("cfg_filename");
 
     // Version
     let manifestData = chrome.runtime.getManifest();

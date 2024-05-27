@@ -2,7 +2,7 @@
     "extensionName": {"message": "Broll Vignette Youtube"},
     "extensionDescription": {"message": "Éditeur de vignettes YouTube personnalisé"},
 
-    "menuItemDownloadThumbnail": {"message": "Télécharger la vignette via broll.gabin.app"},
+    "cfg_broll": {"message": "Télécharger la vignette via broll.gabin.app"},
 
     "cfg_settings": {"message": "Paramètres"},
     "cfg_display_duration": {"message": "Afficher la durée"},
@@ -13,9 +13,13 @@
     "cfg_progression": {"message": "Afficher la progression de lecture"},
 
     "cfg_features": {"message": "Fonctionnalités"},
-    "cfg_autodownload": {"message": "Téléchargement automatique"},
+    "cfg_autodownload": {"message": "Télécharger automatiquement"},
     "cfg_saveas": {"message": "Fenêtre 'Enregistrer sous'"},
-    "cfg_dontopen": {"message": "Ne pas ouvrir broll.gabin.app"},
+    "cfg_openinbroll": {"message": "Ouvrir dans broll.gabin.app"},
     "cfg_creation": {"message": "Création de la miniature en cours..."},
-    "cfg_downloaded": {"message": "Téléchargement terminé 📥"}
+    "cfg_downloaded": {"message": "Téléchargement terminé 📥"},
+    "cfg_filename": {"message": "Nom du fichier"},
+    "cfg_thumbnail": {"message": "miniature_"},
+    "cfg_copytoclipboard": {"message": "Copier l'image dans le presse-papier"},
+    "cfg_copied": {"message": "Image copié dans le presse-papier 📥"}
 }

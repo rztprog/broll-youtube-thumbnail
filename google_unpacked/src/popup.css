@@ -1,11 +1,11 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: borderbox;
     font-family: 'Outfit', 'Tahoma', 'Helvetica', 'Arial', sans-serif;
 }
 
-body {
+body{
     overflow: hidden;
     background-color: #fff;
     border-radius: 8px;
@@ -14,34 +14,42 @@ body {
 	min-width: 16rem;
 }
 
-header {
+header{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-a {
+a{
     text-decoration: none;
     color: black;
 }
 
-footer {
+footer{
     display: flex;
     justify-content: space-between;
     margin-top: 5px;
 }
 
-h3 {
+h3{
     color: grey;
     font-size: 14px;
     font-weight: 400;
 }
 
-.github:hover {
+#filename_text{
+    margin-left: 0;
+}
+
+#filenameInput{
+    width: 80px;
+}
+
+.github:hover{
     color: rgb(21, 45, 60);
 }
 
-.rating:hover {
+.rating:hover{
     color: rgb(235, 235, 0);
 }
 
@@ -63,12 +71,12 @@ h3 {
     content: "\f111";
 }
 
-.icon {
+.icon{
     width: fit-content;
     margin: -25px;
 }
 
-.labels {
+.labels{
     display: flex;
     flex-direction: column;
 }
@@ -103,7 +111,7 @@ h3 {
     font-size: 10px;
 }
 
-.titlePopup {
+.titlePopup{
     font-size: 24px;
     font-weight: bold;
 }

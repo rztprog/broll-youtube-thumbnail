@@ -2,7 +2,7 @@
     "extensionName": {"message": "Miniatura de Broll YouTube"},
     "extensionDescription": {"message": "Editor de miniaturas personalizadas de YouTube"},
 
-    "menuItemDownloadThumbnail": {"message": "Descargar la miniatura a través de broll.gabin.app"},
+    "cfg_broll": {"message": "Descargar la miniatura a través de broll.gabin.app"},
 
     "cfg_settings": {"message": "Configuración"},
     "cfg_display_duration": {"message": "Mostrar duración"},
@@ -15,7 +15,11 @@
     "cfg_features": {"message": "Funciones"},
     "cfg_autodownload": {"message": "Descarga automática"},
     "cfg_saveas": {"message": "Ventana 'Guardar como'"},
-    "cfg_dontopen": {"message": "No abrir broll.gabin.app"},
+    "cfg_openinbroll": {"message": "Abrir en broll.gabin.app"},
     "cfg_creation": {"message": "Creación de miniatura en progreso..."},
-    "cfg_downloaded": {"message": "Descarga completa 📥"}
+    "cfg_downloaded": {"message": "Descarga completa 📥"},
+    "cfg_filename": {"message": "Nombre del archivo"},
+    "cfg_thumbnail": {"message": "miniatura_"},
+    "cfg_copytoclipboard": {"message": "Copiar imagen al portapapeles"},
+    "cfg_copied": {"message": "Imagen copiada al portapapeles 📥"}
 }

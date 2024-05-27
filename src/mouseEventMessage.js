@@ -3,25 +3,43 @@ const downloadModal = (message, videoId) => {
 
     images.forEach((img) => {
         if (img.src.includes(videoId)) {
-            const div = document.createElement('div');
-            div.className = `brollDownloadMessage_${videoId}`;
-            div.style.display = 'flex';
-            div.style.justifyContent = 'center';
-            div.style.alignItems = 'center';
-            div.style.width = '100%';
-            div.style.height = '100%';
-            div.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
-            div.style.position = 'absolute';
+            if (!document.querySelector(`.brollDownloadMessage_${videoId}`)) {
+                const div = document.createElement('div');
+                div.className = `brollDownloadMessage_${videoId}`;
+                div.style.display = 'flex';
+                div.style.justifyContent = 'center';
+                div.style.alignItems = 'center';
+                div.style.width = '100%';
+                div.style.height = '100%';
+                div.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+                div.style.position = 'absolute';
 
-            const span = document.createElement('span');
-            span.className = `modalSpan_${videoId}`;
-            span.textContent = message;
-            span.style.fontSize = '12px';
+                const span = document.createElement('span');
+                span.className = `modalSpan_${videoId}`;
+                span.textContent = message;
+                span.style.fontSize = '12px';
 
-            div.appendChild(span);
+                div.appendChild(span);
 
-            img.parentNode.insertBefore(div, img);
+                img.parentNode.insertBefore(div, img);
+            }
         }
+    });
+}
+
+const hideModal = (message, videoId) => {
+    const modal = document.querySelector(`.brollDownloadMessage_${videoId}`)
+    const modalSpan = document.querySelector(`.modalSpan_${videoId}`)
+    modal.style.transition = 'opacity 3s ease';
+    modal.style.opacity = 1;
+    modalSpan.textContent = message;
+
+    setTimeout(() => {
+        modal.style.opacity = 0;
+    }, 0);
+
+    modal.addEventListener('transitionend', () => {
+        modal.remove();
     });
 }
 
@@ -31,18 +49,6 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }
 
     if (request.action === 'hideModal') {
-        const modal = document.querySelector(`.brollDownloadMessage_${request.videoId}`)
-        const modalSpan = document.querySelector(`.modalSpan_${request.videoId}`)
-        modal.style.transition = 'opacity 5s ease';
-        modal.style.opacity = 1;
-        modalSpan.textContent = request.message;
-
-        setTimeout(() => {
-            modal.style.opacity = 0;
-        }, 0);
-
-        setTimeout(() => {
-            modal.style.display = "none";
-        }, 5000);
+        hideModal(request.message, request.videoId)
     }
 });

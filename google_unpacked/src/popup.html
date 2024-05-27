@@ -60,15 +60,7 @@
                 Features
             </legend>
             <div class="labels">
-                <label class="setting" title="Auto-download">
-                    <input type="checkbox" id="autodownloadInput">
-                    <span id="autodownload_text">
-                        Auto-download
-                    </span>
-                </label>
-            </div>
-            <div class="labels">
-                <label class="setting" title="save as window">
+                <label class="setting" title="Save as window">
                     <input type="checkbox" id="saveasInput">
                     <span id="saveas_text">
                         "Save as" window
@@ -76,11 +68,15 @@
                 </label>
             </div>
             <div class="labels">
-                <label class="setting" title="Don't open broll.gabin.app">
-                    <input type="checkbox" id="dontopenInput">
-                    <span id="dontopen_text">
-                        Don't open broll.gabin.app
+                <label class="setting" title="Type a custom filename" for="filenameSelect">
+                    <span id="filename_text">
+                        Filename
                     </span>
+                    <input type="text" id="filenameInput" title="Type a custom filename">
+                    <select name="filenameSelect" id="filenameSelect">
+                        <option value="videoId">videoId</option>
+                        <!-- <option value="videoTitle">videoTitle</option> -->
+                      </select>
                 </label>
             </div>
         </fieldset>
